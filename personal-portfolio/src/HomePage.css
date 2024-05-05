@@ -1,0 +1,28 @@
+.img {
+    max-width: 30%; 
+}
+
+.header {
+    /* padding-top: 30px; */
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+.rounded-rectangle {
+    display: flex;
+    background-color: gray;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.font {
+    color: white;
+    text-decoration: none;
+}
