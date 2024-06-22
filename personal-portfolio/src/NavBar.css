@@ -2,20 +2,37 @@
 
 .navbar {
     display: flex;
-    flex-direction: row;
-    background-color: white;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     position: fixed; 
     top: 0;
-    left: 0; 
+    left: 0;
+    right: 0; 
+    background-color: #333; 
     z-index: 1000; 
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.3);  */
 }
 
+nav {
+    display: flex;
+    justify-content: space-around; /* Evenly spaces out the nav links */
+    width: 100%;
+}
 
 .nav-link {
-    color: blue;
-    text-decoration: none;
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
     padding: 10px 15px;
 }
 
+/* .nav-link:hover {
+    color:  #666;
+} */
+
+.line {
+    width: 100%;
+    /* color: black; */
+}
