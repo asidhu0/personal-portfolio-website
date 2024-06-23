@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {motion} from 'framer-motion'
 import styles from "./HomePage.css";
 import profilePicture from './assets/Avnoor_Sidhu.jpg';
 import dcAppPicture from './assets/dcApp.svg';
-import grata1 from './assets/grata-1.png'
-import grata2 from './assets/grata-2.png'
+import grata1 from './assets/grata.png'
 import swiftUILogo from './assets/swift.png'
 import mongo from './assets/mongodb-seeklogo2.svg'
 import express from './assets/ex.png'
@@ -15,6 +15,10 @@ import python from './assets/python.png'
 import c from './assets/c.png'
 import tensorFlow from './assets/Tensorflow.svg.png'
 import numpy from './assets/numpy.png'
+import terminalDemoVideo from './assets/teminalDemoVideo.mp4'
+import terminalDemo from './assets/terminalDemo.gif'
+import threading from './assets/multithreadingFinal.png'
+import server from './assets/server.png'
 
 function Home() {
     return (
@@ -54,14 +58,84 @@ function Experience() {
     );
 }
 
-function Rectangle({ name, image, description, style, logos }) {
+
+// original
+// function Rectangle({ name, image, description, style, logos, imageClassName }) {
+//     return (
+//         <div className="rectangle" style={style}>
+//             <div className="spacing">
+//                 <h1 className="title-content">{name}</h1>
+//                 <small className="text-content">{description}</small>
+//             </div>
+//             {/* <img src={image} className="projectImage" /> */}
+//             <img src={image} alt={name} className={`default-image-class ${imageClassName}`} />
+//             <div className="logo-container">
+//                 {logos.map((logo, index) => (
+//                     <img key={index} src={logo} alt="Project Logo" className="logo" />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
+
+// text flipping
+// function Rectangle({ name, image, description, style, logos, imageClassName }) {
+    // const [isFlipped, setIsFlipped] = useState(false);
+
+    // const handleFlip = () => setIsFlipped(!isFlipped);
+
+//     return (
+//         <div className={`rectangle ${isFlipped ? 'is-flipped' : ''}`} style={style}>
+//             <div className="card-front">
+//                 <div className="spacing">
+//                     <h1 className="title-content">{name}</h1>
+//                     <small className="text-content">{description}</small>
+//                     <button onClick={handleFlip}>Flip</button>
+//                 </div>
+//                 <img src={image} alt={`Project ${name}`} className={`default-image-class ${imageClassName}`} />
+//                 <div className="logo-container">
+//                     {logos?.map((logo, index) => (
+//                         <img key={index} src={logo} alt={`${name} project logo`} className="logo" />
+//                     ))}
+//                 </div>
+//             </div>
+//             <div className="card-back">
+//                 <button onClick={handleFlip}>Flip Back</button>
+//             </div>
+//         </div>
+//     );
+// }
+
+// card flipping
+// function Rectangle({ key, name, image, description, style, logos, imageClassName }) {
+//     return (
+//         <div className="rectangle" style={style}>
+//             <div className="spacing">
+//                 <h1 className="title-content">{name}</h1>
+//                 <small className="text-content">{description}</small>
+//             </div>
+//             {/* <img src={image} className="projectImage" /> */}
+//             <img src={image} alt={name} className={`default-image-class ${imageClassName}`} />
+//             <div className="logo-container">
+//                 {logos.map((logo, index) => (
+//                     <img key={index} src={logo} alt="Project Logo" className="logo" />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
+
+function FrontView({ name, image, description, style, logos, imageClassName, handleFlip}) {
     return (
         <div className="rectangle" style={style}>
-            <div className="text-content">
-                <h3>{name}</h3>
-                <p>{description}</p>
+            <div className="spacing">
+                <h1 className="title-content">{name}</h1>
+                <small className="text-content">{description}</small>
             </div>
-            <img src={image} className="projectImage" />
+            <div className="buttonstyle">
+                <button onClick={handleFlip} className="flip-button">More Details</button>
+            </div>
+            <img src={image} alt={name} className={`default-image-class ${imageClassName}`} />
             <div className="logo-container">
                 {logos.map((logo, index) => (
                     <img key={index} src={logo} alt="Project Logo" className="logo" />
@@ -71,16 +145,66 @@ function Rectangle({ name, image, description, style, logos }) {
     );
 }
 
+// function BackView({ style, handleFlip, details }) {
+//     return (
+//         <div className="rectangle flip-card-back backView" style={style}>
+//             <p>{details}</p>
+//         </div>
+//     );
+// }
+
+function Rectangle({ name, image, description, style, logos, imageClassName, detail }) {
+    const [isFlipped, setFlipped] = useState(false)
+    const handleFlip = () => {
+        setFlipped(!isFlipped);
+    };
+    return (
+        <div
+            className={`flip-card ${
+                isFlipped ? "flipped" : ""
+            }`}
+        >
+            <div className="flip-card-inner">
+                <div className="flip-card-front">
+                    <FrontView name={name} image={image} description={description} style={style} logos={logos} imageClassName={imageClassName} handleFlip={handleFlip} />
+                </div>
+                <div className="flip-card-back">
+                    {/* <BackView style={style} handleFlip={handleFlip} details={details} className="flip-card-back"/> */}
+                    <p>{detail}</p>
+                    <button className="flip-button" onClick={handleFlip}>Back</button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
 function Projects() { 
+    const dcDescription = 'Developed the UC Davis Dining Hall App using MERN stack while mentoring a cross-functional team of developers and designers. The app displays menus, allows dietary based filtering, tracks calories, and saved favorite food items.'
+    const grataDescription = 'Built iOS native application with five other developers. The app allows building managers easily pair bluetooth locks to tenant units, lock and unlock units, change lock PINs, unpair locks, and other minor acconut management features.'
+    const labSchedulerDescription = 'Implemented software to display live server data and availability status using host/client scripts implemented with TCP sockets. Allows engineers to monitor server availablity status so they can reserve it accordingly on Microsoft Teams.'
+    const userThreadLibraryDescription = 'Developed a Linux-based user-level thread library, offering an interface for simulating multi-threading and concurrency. Implemented user-thread, semaphore, and preemption API\'s for thread management and proper thread synchronization.'
+    const tuneHuntDescription = 'Implemented an interactive map-based game built with React Native. You can collect album covers around your location, add them to your library, and have the Spotfiy page linked so you can discover new music!'
+    const ticTacToeDescription = 'Designed and implemented a native iOS Tic-Tac-Toe Application using SwiftUI. The game consists of one/two player mode, 4 levels of difficulty ranging from easy to impossible, customizable names, score tracker, and game sounds.'
+    const terminalDescription = 'Developed a custom shell program that handles basic in-built commands, supports multipiping and output redirection, and manages simple environmental variables, ensuring efficient parsing and execution of commands with robust error handling and memory management.'
+    const securityCameraDescription = 'Leveraged machine learning and real time image processing to detect and track people in live camera feed. Utilizing TensorFlow\'s convolutional neural networks, the system provides accurate, hardware-independent security monitoring with live alerts.'
+
+    const dcDetails = `
+        - Mentoring developers, designers, and project manager in MERN stack mobile app development, providing technical guidance and fostering interpersonal skill development
+        - Developing a dining commons app with daily macro tracking, filtering food options, and notifications for favorite foods
+        - Implemented Google Authentication and notifications using Firebase and web scraped food items using Python
+        `
+
+
     const projects = [
-        { id: 1, name: 'DC Menu App', description: 'Description of Project One.', color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node] },
-        { id: 2, name: 'iOS Property Management Application', description: 'Description of Project Two.', color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods] },
-        { id: 3, name: 'Lab Scheduler', description: 'Description of Project Three.', color: '#F0EDFA', image: '/path/to/image3.jpg', logos: [python] },
-        { id: 4, name: 'User Thread Library', description: 'Description of Project Four.', color: '#F0EDFA', image: '/path/to/image4.jpg', logos: [c] },
-        { id: 5, name: 'Tune Hunt', description: 'Description of Project Five.', color: '#F0EDFA', image: '/path/to/image5.jpg', logos: [python] },
-        { id: 6, name: 'Tic Tac Toe', description: 'Description of Project Six.', color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo] },
-        { id: 7, name: 'Terminal', description: 'Description of Project Seven.', color: '#F0EDFA', image: '/path/to/image7.jpg', logos: [c] },
-        { id: 8, name: 'Security Camera', description: 'Description of Project Eight.', color: '#F0EDFA', image: '/path/to/image8.jpg', logos: [python, tensorFlow, numpy] }
+        { id: 1, name: 'Dining Hall Menu App', description: dcDescription, color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node], detail: dcDetails },
+        { id: 2, name: 'Grata Manager', description: grataDescription, color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods] },
+        { id: 3, name: 'Lab Scheduler', description: labSchedulerDescription, color: '#F0EDFA', image: server, logos: [python] },
+        { id: 4, name: 'User Thread Library', description: userThreadLibraryDescription, color: '#F0EDFA', image: threading, logos: [c] },
+        { id: 5, name: 'Tune Hunt', description: tuneHuntDescription, color: '#F0EDFA', image: '/path/to/image5.jpg', logos: [python] },
+        { id: 6, name: 'Tic Tac Toe', description: ticTacToeDescription, color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo] },
+        { id: 7, name: 'Simple Shell', description: terminalDescription, color: '#F0EDFA', image: terminalDemo, logos: [c] },
+        { id: 8, name: 'Security Camera', description: securityCameraDescription, color: '#F0EDFA', image: '/path/to/image8.jpg', logos: [python, tensorFlow, numpy] }
     ];
     return (
         <div className="container">
@@ -97,6 +221,8 @@ function Projects() {
                         image={project.image}
                         style={{ backgroundColor: project.color }}
                         logos={project.logos}
+                        imageClassName={project.id === 4 ? 'special-image-style' : ''}
+                        detail={project.detail}
                     />
                 ))}
             </div>
