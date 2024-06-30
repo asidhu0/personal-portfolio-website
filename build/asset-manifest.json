@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/personal-portfolio-website/static/css/main.54f9eb66.css",
+    "main.js": "/personal-portfolio-website/static/js/main.7ab03e72.js",
+    "static/js/453.b21437c2.chunk.js": "/personal-portfolio-website/static/js/453.b21437c2.chunk.js",
+    "static/media/Avnoor_Sidhu.jpg": "/personal-portfolio-website/static/media/Avnoor_Sidhu.50eaaa70581484cffce2.jpg",
+    "static/media/dcApp.svg": "/personal-portfolio-website/static/media/dcApp.d76c42e1cb6fc85f7c61c37aa2ca84e9.svg",
+    "static/media/ticTacToe.png": "/personal-portfolio-website/static/media/ticTacToe.ce1b05be61d9fccc3d6c.png",
+    "static/media/teminalDemoVideo.mp4": "/personal-portfolio-website/static/media/teminalDemoVideo.ff694b05568e6b14e0d1.mp4",
+    "static/media/securityCameraReal.png": "/personal-portfolio-website/static/media/securityCameraReal.d7c0b4728ab0643e21c7.png",
+    "static/media/tuneHunt.png": "/personal-portfolio-website/static/media/tuneHunt.1ff84175a5f4f164bcfe.png",
+    "static/media/grata.png": "/personal-portfolio-website/static/media/grata.3d0dbdb2d33e0964bf87.png",
+    "static/media/server.png": "/personal-portfolio-website/static/media/server.7ad03874242e11d53567.png",
+    "static/media/terminalDemo.gif": "/personal-portfolio-website/static/media/terminalDemo.55a3942921e971456bc4.gif",
+    "static/media/multithreadingFinal.png": "/personal-portfolio-website/static/media/multithreadingFinal.2691d6249fa7e3b968ae.png",
+    "static/media/swift.png": "/personal-portfolio-website/static/media/swift.dc8cd767cfdec911d7df.png",
+    "static/media/c.png": "/personal-portfolio-website/static/media/c.272d1cfdb06887e8671d.png",
+    "static/media/numpy.png": "/personal-portfolio-website/static/media/numpy.9ea18f9dc8b6c78f4a72.png",
+    "static/media/python.png": "/personal-portfolio-website/static/media/python.9c47735ea0c4a2d20349.png",
+    "static/media/node-js-seeklogo.svg": "/personal-portfolio-website/static/media/node-js-seeklogo.3dc364b8e9beb3561620274aea4f0844.svg",
+    "static/media/logo.svg": "/personal-portfolio-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/mongodb-seeklogo2.svg": "/personal-portfolio-website/static/media/mongodb-seeklogo2.1aca075d5cce0819fea7ea0902d94ce4.svg",
+    "index.html": "/personal-portfolio-website/index.html",
+    "static/media/Pandas.svg": "/personal-portfolio-website/static/media/Pandas.5a48d1677b40ca61e96a08e92fdbb64d.svg",
+    "static/media/cocoapods.svg": "/personal-portfolio-website/static/media/cocoapods.38fd34fbceed5e4d4395084299b84301.svg",
+    "main.54f9eb66.css.map": "/personal-portfolio-website/static/css/main.54f9eb66.css.map",
+    "main.7ab03e72.js.map": "/personal-portfolio-website/static/js/main.7ab03e72.js.map",
+    "453.b21437c2.chunk.js.map": "/personal-portfolio-website/static/js/453.b21437c2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54f9eb66.css",
+    "static/js/main.7ab03e72.js"
+  ]
+}
