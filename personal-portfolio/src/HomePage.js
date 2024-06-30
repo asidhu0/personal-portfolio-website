@@ -20,13 +20,21 @@ import terminalDemo from './assets/terminalDemo.gif'
 import threading from './assets/multithreadingFinal.png'
 import server from './assets/server.png'
 import pandas from './assets/Pandas.svg'
+import tuneHunt from './assets/tuneHunt.png'
+import mailIcon from './assets/mail.png'
+import mailWhite from './assets/mailWhite.png'
+import linkedinIcon from './assets/linkedin.png'
+import whiteLinkedin from './assets/whiteLinkedin.png'
+import githubIcon from './assets/github.png'
+import githubWhite from './assets/githubWhite.png'
+import securityCamera from './assets/securityCameraReal.png'
 
 function Home() {
     return (
         <div class="home">
             <div class="text-column">
                 <h1 className='header'>Hello, I am Avnoor Sidhu</h1>
-                <p>I am a Software Engineer at FOCAL Lab. </p>
+                <p>A Software Engineer based in the San Francisco Bay Area, currently working at FOCAL Lab. </p>
             </div>
             <div class="image-column">
                 <img src={profilePicture} alt="Profile Picture" className="img" />
@@ -50,7 +58,7 @@ function Experience() {
         <div className="container">
             <h3 className="titles">Experience</h3>
             <hr class="custom-line"></hr>
-            <div>
+            <div className="below-line">
                 <TextLine time="Jan 2024 - present" company="Forest Change Analysis Lab" position="Software Engineer" />
                 <TextLine time="Jun 2023 - Sep 2023" company="Lawrence Livermore National Laboratory" position="Software Engineer Intern" />
                 <TextLine time="Jan 2023 - Jun 2023" company="Solidigm" position="SSD Technical Intern" />
@@ -58,73 +66,6 @@ function Experience() {
         </div>
     );
 }
-
-
-// original
-// function Rectangle({ name, image, description, style, logos, imageClassName }) {
-//     return (
-//         <div className="rectangle" style={style}>
-//             <div className="spacing">
-//                 <h1 className="title-content">{name}</h1>
-//                 <small className="text-content">{description}</small>
-//             </div>
-//             {/* <img src={image} className="projectImage" /> */}
-//             <img src={image} alt={name} className={`default-image-class ${imageClassName}`} />
-//             <div className="logo-container">
-//                 {logos.map((logo, index) => (
-//                     <img key={index} src={logo} alt="Project Logo" className="logo" />
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// }
-
-// text flipping
-// function Rectangle({ name, image, description, style, logos, imageClassName }) {
-    // const [isFlipped, setIsFlipped] = useState(false);
-
-    // const handleFlip = () => setIsFlipped(!isFlipped);
-
-//     return (
-//         <div className={`rectangle ${isFlipped ? 'is-flipped' : ''}`} style={style}>
-//             <div className="card-front">
-//                 <div className="spacing">
-//                     <h1 className="title-content">{name}</h1>
-//                     <small className="text-content">{description}</small>
-//                     <button onClick={handleFlip}>Flip</button>
-//                 </div>
-//                 <img src={image} alt={`Project ${name}`} className={`default-image-class ${imageClassName}`} />
-//                 <div className="logo-container">
-//                     {logos?.map((logo, index) => (
-//                         <img key={index} src={logo} alt={`${name} project logo`} className="logo" />
-//                     ))}
-//                 </div>
-//             </div>
-//             <div className="card-back">
-//                 <button onClick={handleFlip}>Flip Back</button>
-//             </div>
-//         </div>
-//     );
-// }
-
-// card flipping
-// function Rectangle({ key, name, image, description, style, logos, imageClassName }) {
-//     return (
-//         <div className="rectangle" style={style}>
-//             <div className="spacing">
-//                 <h1 className="title-content">{name}</h1>
-//                 <small className="text-content">{description}</small>
-//             </div>
-//             {/* <img src={image} className="projectImage" /> */}
-//             <img src={image} alt={name} className={`default-image-class ${imageClassName}`} />
-//             <div className="logo-container">
-//                 {logos.map((logo, index) => (
-//                     <img key={index} src={logo} alt="Project Logo" className="logo" />
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// }
 
 function FrontView({ name, image, description, style, logos, imageClassName, handleFlip}) {
     return (
@@ -146,19 +87,37 @@ function FrontView({ name, image, description, style, logos, imageClassName, han
     );
 }
 
-// function BackView({ style, handleFlip, details }) {
-//     return (
-//         <div className="rectangle flip-card-back backView" style={style}>
-//             <p>{details}</p>
-//         </div>
-//     );
-// }
-
 function Rectangle({ name, image, description, style, logos, imageClassName, details }) {
     const [isFlipped, setFlipped] = useState(false)
     const handleFlip = () => {
         setFlipped(!isFlipped);
     };
+    function renderDetails() {
+        return details.split('\n')
+            .map(line => line.trim())  // Trim whitespace from each line
+            .filter(line => line && line.startsWith('-'))  // Filter out empty lines and lines that don't start with '-'
+            .map((item, index) => {
+                const urlRegex = /(https?:\/\/[^\s]+)/g; // Regex to identify URLs
+                const content = item.substring(1).trim(); // Remove the leading '-' and trim any extra spaces
+    
+                const parts = content.split(urlRegex); // Split the content to isolate URLs
+    
+                return (
+                    <li key={index}>
+                        {parts.map((part, i) => {
+                            if (part.match(urlRegex)) {
+                                // Render part as an anchor tag if it is a URL
+                                return <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>;
+                            }
+                            // Otherwise, render the part as plain text
+                            return part;
+                        })}
+                    </li>
+                );
+            });
+    }
+    
+    
     return (
         <div
             className={`flip-card ${
@@ -170,8 +129,7 @@ function Rectangle({ name, image, description, style, logos, imageClassName, det
                     <FrontView name={name} image={image} description={description} style={style} logos={logos} imageClassName={imageClassName} handleFlip={handleFlip} />
                 </div>
                 <div className="flip-card-back">
-                    {/* <BackView style={style} handleFlip={handleFlip} details={details} className="flip-card-back"/> */}
-                    <p>{details}</p>
+                    <ul className="details-list">{renderDetails()}</ul>
                     <button className="flip-button" onClick={handleFlip}>Back</button>
                 </div>
             </div>
@@ -245,14 +203,14 @@ function Projects() {
         `
 
     const projects = [
-        { id: 1, name: 'Dining Hall Menu App', description: dcDescription, color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node], detail: dcDetails },
-        { id: 2, name: 'Grata Manager', description: grataDescription, color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods] },
+        { id: 1, name: 'Dining Hall Menu App', description: dcDescription, color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails },
+        { id: 2, name: 'Grata Manager', description: grataDescription, color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
         { id: 3, name: 'Lab Scheduler', description: labSchedulerDescription, color: '#F0EDFA', image: server, logos: [python, pandas], details: labSchedulerDetails },
-        { id: 4, name: 'User Thread Library', description: userThreadLibraryDescription, color: '#F0EDFA', image: threading, logos: [c] },
-        { id: 5, name: 'Tune Hunt', description: tuneHuntDescription, color: '#F0EDFA', image: '/path/to/image5.jpg', logos: [react] },
-        { id: 6, name: 'Tic Tac Toe', description: ticTacToeDescription, color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo] },
-        { id: 7, name: 'Simple Shell', description: terminalDescription, color: '#F0EDFA', image: terminalDemo, logos: [c] },
-        { id: 8, name: 'Security Camera', description: securityCameraDescription, color: '#F0EDFA', image: '/path/to/image8.jpg', logos: [python, tensorFlow, numpy] }
+        { id: 4, name: 'User Thread Library', description: userThreadLibraryDescription, color: '#F0EDFA', image: threading, logos: [c], details: threadDetails},
+        { id: 5, name: 'Tune Hunt', description: tuneHuntDescription, color: '#F0EDFA', image: tuneHunt, logos: [react], details: tuneHuntDetails},
+        { id: 6, name: 'Tic Tac Toe', description: ticTacToeDescription, color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
+        { id: 7, name: 'Simple Shell', description: terminalDescription, color: '#F0EDFA', image: terminalDemo, logos: [c], details: shellDetails},
+        { id: 8, name: 'Security Camera', description: securityCameraDescription, color: '#F0EDFA', image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails}
     ];
     return (
         <div className="container">
@@ -270,7 +228,7 @@ function Projects() {
                         style={{ backgroundColor: project.color }}
                         logos={project.logos}
                         imageClassName={project.id === 4 ? 'special-image-style' : ''}
-                        detail={project.detail}
+                        details={project.details}
                     />
                 ))}
             </div>
@@ -285,7 +243,29 @@ function Contact() {
                 <h3 className="titles">Contact</h3>
                 <hr class="custom-line"></hr>
             </div>
-            <p>Are you interested in collaborating or want to connect or chat? If so, hit the contact button down below or contact me via LinkedIn.</p>
+            <div className="contact-content">
+                <p className="contact-text">Are you interested in collaborating or want to connect or chat? Feel free to reach out!</p>
+                <div className="contact-icons">
+                    <div className="contact-button-text">
+                        <a href="mailto:asidhu359@gmail.com" className="contact-button-text">
+                            <img src={mailWhite} alt="Email" />
+                            <p>asidhu359@gmail.com</p>
+                        </a>
+                    </div>
+                    <div className="contact-button-text">
+                        <a href="https://linkedin.com/in/avnoor-sidhu/" target="_blank" rel="noopener noreferrer" className="contact-button-text">
+                            <img src={whiteLinkedin} alt="LinkedIn" />
+                            <p>linkedin.com/in/avnoor-sidhu/</p>
+                        </a>
+                    </div>
+                    <div className="contact-button-text">
+                        <a href="https://github.com/asidhu0" target="_blank" rel="noopener noreferrer" className="contact-button-text">
+                            <img src={githubWhite} alt="GitHub" />
+                            <p>github.com/asidhu0</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
@@ -293,16 +273,16 @@ function Contact() {
 function HomePage() {
     return (
         <div className="HomePage">
-            <div id="home">
+            <div id="home" className="home-section">
                 <Home />
             </div>
-            <div id="experience">
+            <div id="experience" className="section">
                 <Experience />
             </div>
-            <div id="projects">
+            <div id="projects" className="section">
                 <Projects />
             </div>
-            <div id="contact">
+            <div id="contact" className="contact-padding">
                 <Contact />
             </div>
         </div>

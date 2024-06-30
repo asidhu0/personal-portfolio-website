@@ -4,8 +4,8 @@ import styles from "./NavBar.css";
 
 function NavBar() {
   return (
-    <div className="navbar">
-      <nav>
+    <div className="navbar-container">
+      <nav className="navbar">
         <a href="#home" className="nav-link">Home</a>
         <a href="#experience" className="nav-link">Experience</a>
         <a href="#projects" className="nav-link">Projects</a>

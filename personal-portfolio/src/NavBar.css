@@ -1,18 +1,27 @@
 /* NavBar.css */
 
-.navbar {
+.navbar-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     position: fixed; 
     top: 0;
     left: 0;
     right: 0; 
-    background-color: #333; 
+    background-color: #282c34; 
     z-index: 1000; 
-    /* box-shadow: 0 2px 5px rgba(0,0,0,0.3);  */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
+}
+
+.navbar {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
 }
 
 nav {
@@ -26,13 +35,26 @@ nav {
     text-decoration: none; 
     font-weight: bold; 
     padding: 10px 15px;
+    transition: color 0.3s ease;
 }
 
-/* .nav-link:hover {
+.nav-link:hover {
     color:  #666;
-} */
+}
 
 .line {
     width: 100%;
     /* color: black; */
+}
+
+.section {
+    scroll-margin-top: 45px;
+}
+
+.home-section {
+    scroll-margin-top: 500px;
+}
+
+.contact-padding {
+    padding-bottom: 3%;
 }
