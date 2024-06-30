@@ -39,7 +39,7 @@ function Home() {
     );
   }
 
-function TextLine({ time, company, location, position }) {
+function TextLine({ time, company, position }) {
     return (
         <div className="experienceText">
             <small className="timeText">{time}</small>
