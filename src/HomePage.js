@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {motion} from 'framer-motion'
 import styles from "./HomePage.css";
 import profilePicture from './assets/Avnoor_Sidhu.jpg';
 import dcAppPicture from './assets/dcApp.svg';
@@ -24,6 +23,9 @@ import mailWhite from './assets/mailWhite.png'
 import whiteLinkedin from './assets/whiteLinkedin.png'
 import githubWhite from './assets/githubWhite.png'
 import securityCamera from './assets/securityCameraReal.png'
+// import cpp from './assets/c++.svg.png'
+import cpp from './assets/cpp.png'
+import bash from './assets/bash.svg.png'
 
 function Home() {
     return (
@@ -63,6 +65,43 @@ function Experience() {
     );
 }
 
+function Skills() {
+    return (
+        <div className="container">
+            <h3 className="titles">Skills</h3>
+            <hr class="custom-line"></hr>
+            <div className="skills-container">
+                <div className="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <img src={cpp} className="skills-logo" />
+                        <img src={python} className="skills-logo" />
+                        <img src={swiftUILogo} className="skills-logo" />
+                        <img src={bash} className="skills-logo" />
+                    </ul>
+                </div>
+                <div className="skill-category">
+                    <h4>Web Development</h4>
+                    <ul>
+                        <img src={mongo} className="skills-logo" />
+                        <img src={express} className="skills-logo" />
+                        <img src={node} className="skills-logo" />
+                        <img src={react} className="skills-logo" />
+                    </ul>
+                </div>
+                <div className="skill-category">
+                    <h4>Data Science Libraries</h4>
+                    <ul>
+                        <img src={tensorFlow} className="skills-logo" />
+                        <img src={numpy} className="skills-logo" />
+                        <img src={pandas} className="skills-logo" />
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 function FrontView({ name, image, description, style, logos, imageClassName, handleFlip}) {
     return (
         <div className="rectangle" style={style}>
@@ -90,22 +129,20 @@ function Rectangle({ name, image, description, style, logos, imageClassName, det
     };
     function renderDetails() {
         return details.split('\n')
-            .map(line => line.trim())  // Trim whitespace from each line
-            .filter(line => line && line.startsWith('-'))  // Filter out empty lines and lines that don't start with '-'
+            .map(line => line.trim())
+            .filter(line => line && line.startsWith('-')) 
             .map((item, index) => {
-                const urlRegex = /(https?:\/\/[^\s]+)/g; // Regex to identify URLs
-                const content = item.substring(1).trim(); // Remove the leading '-' and trim any extra spaces
+                const urlRegex = /(https?:\/\/[^\s]+)/g;
+                const content = item.substring(1).trim();
     
-                const parts = content.split(urlRegex); // Split the content to isolate URLs
+                const parts = content.split(urlRegex);
     
                 return (
                     <li key={index}>
                         {parts.map((part, i) => {
                             if (part.match(urlRegex)) {
-                                // Render part as an anchor tag if it is a URL
                                 return <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>;
                             }
-                            // Otherwise, render the part as plain text
                             return part;
                         })}
                     </li>
@@ -142,7 +179,7 @@ function Projects() {
     const tuneHuntDescription = 'Implemented an interactive map-based game built with React Native. You can collect album covers around your location, add them to your library, and have the Spotfiy page linked so you can discover new music!'
     const ticTacToeDescription = 'Designed and implemented a native iOS Tic-Tac-Toe Application using SwiftUI. The game consists of one/two player mode, 4 levels of difficulty ranging from easy to impossible, customizable names, score tracker, and game sounds.'
     const terminalDescription = 'Developed a custom shell program that handles basic in-built commands, supports multipiping and output redirection, and manages simple environmental variables, ensuring efficient parsing and execution of commands with robust error handling and memory management.'
-    const securityCameraDescription = 'Leveraged machine learning and real time image processing to detect and track people in live camera feed. Utilizing TensorFlow\'s convolutional neural networks, the system provides accurate, hardware-independent security monitoring with live alerts.'
+    const securityCameraDescription = 'Leveraged machine learning and image processing to detect and track people in live camera feed. Utilizing TensorFlow\'s convolutional neural networks, the system provides accurate, hardware-independent security monitoring with live alerts.'
 
     const dcDetails = `
         - Mentored developers, designers, and project manager by providing technical guidance and fostering interpersonal skill development
@@ -199,14 +236,14 @@ function Projects() {
         `
 
     const projects = [
-        { id: 1, name: 'Dining Hall Menu App', description: dcDescription, color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails },
-        { id: 2, name: 'Grata Manager', description: grataDescription, color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
-        { id: 3, name: 'Lab Scheduler', description: labSchedulerDescription, color: '#F0EDFA', image: server, logos: [python, pandas], details: labSchedulerDetails },
-        { id: 4, name: 'User Thread Library', description: userThreadLibraryDescription, color: '#F0EDFA', image: threading, logos: [c], details: threadDetails},
-        { id: 5, name: 'Tune Hunt', description: tuneHuntDescription, color: '#F0EDFA', image: tuneHunt, logos: [react], details: tuneHuntDetails},
-        { id: 6, name: 'Tic Tac Toe', description: ticTacToeDescription, color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
-        { id: 7, name: 'Simple Shell', description: terminalDescription, color: '#F0EDFA', image: terminalDemo, logos: [c], details: shellDetails},
-        { id: 8, name: 'Security Camera', description: securityCameraDescription, color: '#F0EDFA', image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails}
+        { id: 1, name: 'Grata Manager', description: grataDescription, color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
+        { id: 2, name: 'Lab Scheduler', description: labSchedulerDescription, color: '#F0EDFA', image: server, logos: [python, pandas], details: labSchedulerDetails},
+        { id: 3, name: 'Dining Hall Menu App', description: dcDescription, color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails},
+        { id: 4, name: 'Security Camera', description: securityCameraDescription, color: '#F0EDFA', image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails},
+        { id: 5, name: 'User Thread Library', description: userThreadLibraryDescription, color: '#F0EDFA', image: threading, logos: [c], details: threadDetails},
+        { id: 6, name: 'Simple Shell', description: terminalDescription, color: '#F0EDFA', image: terminalDemo, logos: [c], details: shellDetails},
+        { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, color: '#F0EDFA', image: tuneHunt, logos: [react], details: tuneHuntDetails},
+        { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
     ];
     return (
         <div className="container">
@@ -223,7 +260,7 @@ function Projects() {
                         image={project.image}
                         style={{ backgroundColor: project.color }}
                         logos={project.logos}
-                        imageClassName={project.id === 4 ? 'special-image-style' : ''}
+                        imageClassName={project.id === 5 ? 'special-image-style' : ''}
                         details={project.details}
                     />
                 ))}
@@ -274,6 +311,9 @@ function HomePage() {
             </div>
             <div id="experience" className="section">
                 <Experience />
+            </div>
+            <div>
+                <Skills />
             </div>
             <div id="projects" className="section">
                 <Projects />
