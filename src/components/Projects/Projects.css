@@ -1,0 +1,29 @@
+.container {
+    width: 70%;
+    margin: 0 auto; 
+    padding: 15px;
+}
+
+.titles {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.custom-line {
+    height: 1px;
+    background-color: #666;
+    border: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px;
+    padding-top: 50px;
+}
+
+.special-image-style {
+    width: 80%;
+    height: auto; 
+    padding-left: 9.9%;
+}
