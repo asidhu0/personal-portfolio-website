@@ -2,10 +2,10 @@
     text-align: left;
 }
 
-.experienceText strong {
+/* .experienceText strong {
     margin-top: 2px; 
     margin-bottom: 0px;
-}
+} */
 
 .experienceText p {
     margin-top: 0px; 
@@ -14,7 +14,7 @@
 .timeText {
     opacity: 0.5;
     display: block;
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
 }
 
 .positionText {
@@ -22,9 +22,10 @@
 }
 
 .container {
-    width: 70%;
+    /* width: 70%; */
     margin: 0 auto; 
     padding: 15px;
+    width: 1000px;
 }
 
 .titles {
@@ -32,11 +33,11 @@
     margin-bottom: 5px;
 }
 
-.custom-line {
+/* .custom-line {
     height: 1px;
     background-color: #666;
     border: none;
-}
+} */
 
 .below-line {
     margin-top: 25px;

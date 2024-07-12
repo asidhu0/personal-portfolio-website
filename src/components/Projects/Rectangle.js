@@ -1,9 +1,30 @@
 import React, { useState } from 'react';
 import './Rectangle.css';
 
-function FrontView({ name, image, description, style, logos, imageClassName, handleFlip}) {
+// function FrontView({ name, image, description, style, logos, imageClassName, handleFlip}) {
+//     return (
+//         <div className="rectangle" style={style}>
+//             <div className="spacing">
+//                 <h1 className="title-content">{name}</h1>
+//                 <small className="text-content">{description}</small>
+//             </div>
+//             <div className="buttonstyle">
+//                 <button onClick={handleFlip} className="flip-button">More Details</button>
+//             </div>
+//             {/* <img src={image} alt={name} className={`default-image-class ${imageClassName}`} /> */}
+//             <img src={image} alt={name} className={`${imageClassName}`} />
+//             <div className="logo-container">
+//                 {logos.map((logo, index) => (
+//                     <img key={index} src={logo} alt="Project Logo" className="logo" />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
+
+function FrontView({ name, image, description, logos, handleFlip}) {
     return (
-        <div className="rectangle" style={style}>
+        <div className="rectangle">
             <div className="spacing">
                 <h1 className="title-content">{name}</h1>
                 <small className="text-content">{description}</small>
@@ -11,7 +32,7 @@ function FrontView({ name, image, description, style, logos, imageClassName, han
             <div className="buttonstyle">
                 <button onClick={handleFlip} className="flip-button">More Details</button>
             </div>
-            <img src={image} alt={name} className={`default-image-class ${imageClassName}`} />
+            <img src={image} alt={name} className="image" />
             <div className="logo-container">
                 {logos.map((logo, index) => (
                     <img key={index} src={logo} alt="Project Logo" className="logo" />
@@ -48,16 +69,18 @@ function Rectangle({ name, image, description, style, logos, imageClassName, det
                 );
             });
     }
-    
-    
     return (
         <div
             className={`flip-card ${
                 isFlipped ? "flipped" : ""
             }`}
         >
-            <div className="flip-card-inner">
-                <div className="flip-card-front">
+            <div 
+            className="flip-card-inner"
+            >
+                <div 
+                className="flip-card-front"
+                >
                     <FrontView name={name} image={image} description={description} style={style} logos={logos} imageClassName={imageClassName} handleFlip={handleFlip} />
                 </div>
                 <div className="flip-card-back">

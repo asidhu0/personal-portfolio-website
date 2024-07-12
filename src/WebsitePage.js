@@ -9,19 +9,19 @@ import './WebsitePage.css';
 function WebsitePage() {
     return (
         <div className="HomePage">
-            <div id="home" className="home-section">
+            <div id="home">
                 <Home />
             </div>
-            <div id="experience" className="section">
+            <div id="experience">
                 <Experience />
             </div>
             <div>
                 <Skills />
             </div>
-            <div id="projects" className="section">
+            <div id="projects">
                 <Projects />
             </div>
-            <div id="contact" className="contact-padding">
+            <div id="contact">
                 <Contact />
             </div>
         </div>

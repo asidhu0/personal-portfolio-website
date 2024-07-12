@@ -24,11 +24,11 @@
     padding-bottom: 0.5%;
 }
 
-nav {
+/* nav {
     display: flex;
-    justify-content: space-around; /* Evenly spaces out the nav links */
+    justify-content: space-around; 
     width: 100%;
-}
+} */
 
 .nav-link {
     color: white; 
@@ -47,14 +47,14 @@ nav {
     /* color: black; */
 }
 
-.section {
+/* .section {
     scroll-margin-top: 45px;
-}
+} */
 
-.home-section {
+/* .home-section {
     scroll-margin-top: 500px;
-}
-
+} */
+/* 
 .contact-padding {
     padding-bottom: 3%;
-}
+} */

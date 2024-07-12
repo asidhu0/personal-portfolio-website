@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Rectangle from './Rectangle';
 import dcAppPicture from './../../assets/dcApp.svg';
 import grata1 from './../../assets/grata.png'
@@ -8,7 +8,8 @@ import express from './../../assets/ex.png'
 import react from './../../assets/reactNew.png'
 import node from './../../assets/node-js-seeklogo.svg'
 import cocoaPods from './../../assets/cocoapods.svg'
-import ticTacToe from './../../assets/ticTacToe.png'
+// import ticTacToe from './../../assets/ticTacToe.png'
+import ticTacToe from './../../assets/new.png'
 import python from './../../assets/python.png'
 import c from './../../assets/c.png'
 import tensorFlow from './../../assets/Tensorflow.svg.png'
@@ -17,7 +18,8 @@ import terminalDemo from './../../assets/terminalDemo.gif'
 import threading from './../../assets/multithreadingFinal.png'
 import server from './../../assets/server.png'
 import pandas from './../../assets/Pandas.svg'
-import tuneHunt from './../../assets/tuneHunt.png'
+// import tuneHunt from './../../assets/tuneHunt.png'
+import tuneHunt from './../../assets/csu.png'
 import securityCamera from './../../assets/securityCameraReal.png'
 import './Projects.css';
 
@@ -28,7 +30,7 @@ function Projects() {
     const userThreadLibraryDescription = 'Developed a Linux-based user-level thread library, offering an interface for simulating multi-threading and concurrency. Implemented user-thread, semaphore, and preemption API\'s for thread management and proper thread synchronization.'
     const tuneHuntDescription = 'Implemented an interactive map-based game built with React Native. You can collect album covers around your location, add them to your library, and have the Spotfiy page linked so you can discover new music!'
     const ticTacToeDescription = 'Designed and implemented a native iOS Tic-Tac-Toe Application using SwiftUI. The game consists of one/two player mode, 4 levels of difficulty ranging from easy to impossible, customizable names, score tracker, and game sounds.'
-    const terminalDescription = 'Developed a custom shell program that handles basic in-built commands, supports multipiping and output redirection, and manages simple environmental variables, ensuring efficient parsing and execution of commands with robust error handling and memory management.'
+    const terminalDescription = 'Developed a custom shell that handles basic in-built commands, supports multipiping and output redirection, and manages simple environmental variables, ensuring efficient parsing of commands with error handling and memory management.'
     const securityCameraDescription = 'Leveraged machine learning and image processing to detect and track people in live camera feed. Utilizing TensorFlow\'s convolutional neural networks, the system provides accurate, hardware-independent security monitoring with live alerts.'
 
     const dcDetails = `
@@ -86,15 +88,26 @@ function Projects() {
         `
 
     const projects = [
-        { id: 1, name: 'Grata Manager', description: grataDescription, color: '#F0EDFA', image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
-        { id: 2, name: 'Lab Scheduler', description: labSchedulerDescription, color: '#F0EDFA', image: server, logos: [python, pandas], details: labSchedulerDetails},
-        { id: 3, name: 'Dining Hall Menu App', description: dcDescription, color: '#F0EDFA', image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails},
-        { id: 4, name: 'Security Camera', description: securityCameraDescription, color: '#F0EDFA', image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails},
-        { id: 5, name: 'User Thread Library', description: userThreadLibraryDescription, color: '#F0EDFA', image: threading, logos: [c], details: threadDetails},
-        { id: 6, name: 'Simple Shell', description: terminalDescription, color: '#F0EDFA', image: terminalDemo, logos: [c], details: shellDetails},
-        { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, color: '#F0EDFA', image: tuneHunt, logos: [react], details: tuneHuntDetails},
-        { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, color: '#F0EDFA', image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
+        { id: 1, name: 'Grata Manager', description: grataDescription, image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
+        { id: 2, name: 'Lab Scheduler', description: labSchedulerDescription, image: server, logos: [python, pandas], details: labSchedulerDetails},
+        { id: 3, name: 'Dining Hall Menu App', description: dcDescription, image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails},
+        { id: 4, name: 'Security Camera', description: securityCameraDescription, image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails},
+        { id: 5, name: 'User Thread Library', description: userThreadLibraryDescription, image: threading, logos: [c], details: threadDetails},
+        { id: 6, name: 'Simple Shell', description: terminalDescription, image: terminalDemo, logos: [c], details: shellDetails},
+        { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, image: tuneHunt, logos: [react], details: tuneHuntDetails},
+        { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
     ];
+    const cells = [
+        { id: 1, name: 'Grata Manager', description: grataDescription, image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
+        { id: 2, name: 'Lab Scheduler', description: labSchedulerDescription, image: server, logos: [python, pandas], details: labSchedulerDetails},
+        { id: 3, name: 'Dining Hall Menu App', description: dcDescription, image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails},
+        { id: 4, name: 'Security Camera', description: securityCameraDescription, image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails},
+        { id: 5, name: 'User Thread Library', description: userThreadLibraryDescription, image: threading, logos: [c], details: threadDetails},
+        { id: 6, name: 'Simple Shell', description: terminalDescription, image: terminalDemo, logos: [c], details: shellDetails},
+        { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, image: tuneHunt, logos: [react], details: tuneHuntDetails},
+        { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
+    ];
+    // const cells = new Array(8).fill(null);
     return (
         <div className="container">
             <div>
@@ -102,15 +115,23 @@ function Projects() {
                 <hr class="custom-line"></hr>
             </div>
             <div className="grid">
+            {/* {cells.map((cell, index) => (
+                <div key={index} className="cell">
+                    <img src={cell.imageUrl} alt={cell.title} className="cell-image" />
+                    <h3>{cell.name}</h3>
+                    <p>{cell.description}</p>
+                </div>
+            ))} */}
+
                 {projects.map(project => (
                     <Rectangle
                         key={project.id}
                         name={project.name}
                         description={project.description}
                         image={project.image}
-                        style={{ backgroundColor: project.color }}
                         logos={project.logos}
-                        imageClassName={project.id === 5 ? 'special-image-style' : ''}
+                        // imageClassName={project.id === 5 ? 'special-image-style' : 'image'}
+                        // imageClassName={'image'}
                         details={project.details}
                     />
                 ))}
