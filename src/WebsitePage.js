@@ -15,7 +15,7 @@ function WebsitePage() {
             <div id="experience">
                 <Experience />
             </div>
-            <div>
+            <div id="skills">
                 <Skills />
             </div>
             <div id="projects">

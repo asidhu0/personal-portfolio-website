@@ -1,5 +1,5 @@
-/* 
-.titles {
+
+/* .titles {
     text-align: left;
     margin-bottom: 5px;
 }
@@ -15,13 +15,16 @@
 }
 
 .contact-text {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    width: 50%;
+    padding-right: 100px;
 }
 
 .contact-icons {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 50%;
 }
 
 .contact-icons img {
@@ -45,9 +48,15 @@
 
 
 
-.titles {
+/* .titles {
     text-align: left;
     margin-bottom: 5px;
+} */
+
+.contacts-container {
+    margin: 0 auto; 
+    padding: 15px;
+    width: 1000px;
 }
 
 .contact-content {
@@ -59,14 +68,17 @@
 .contact-text {
     flex: 1; 
     padding-right: 20px; 
+    font-size: 20px;
 }
 
 .contact-icons {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-right: 5%;
-    padding-left: 5%;
+    /* padding-right: 5%; */
+    /* padding-left: 5%; */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .contact-icons img {
@@ -82,4 +94,19 @@
     margin-bottom: -15px;
     color: inherit;
     text-decoration: none;
+    padding: 5px;
+}
+
+.image-right-text {
+    font-size: 20px;
+}
+
+@media (max-width: 1070px) {
+    .contacts-container {
+        width: 500px;
+    }
+    .contact-content {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -33,9 +33,21 @@ function FrontView({ name, image, description, logos, handleFlip}) {
                 <button onClick={handleFlip} className="flip-button">More Details</button>
             </div>
             <img src={image} alt={name} className="image" />
+            {/* <div className="logo-container">
+                {logos.map((logo, index) => (
+                    <div className="logo-name">
+                        <img key={index} src={logo} alt="Project Logo" className="logo" />
+                    </div>
+                ))}
+            </div> */}
             <div className="logo-container">
                 {logos.map((logo, index) => (
-                    <img key={index} src={logo} alt="Project Logo" className="logo" />
+                    <div key={index} className="logo-name">
+                        <div className="effect">
+                            <img src={logo.image} alt="Project Logo" className="logo" />
+                            <span className="logo-caption">{logo.caption}</span>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

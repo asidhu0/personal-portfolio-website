@@ -13,12 +13,12 @@ import './Skills.css';
 
 function Skills() {
     return (
-        <div className="container">
+        <div className="skills-top-container">
             <h3 className="titles">Skills</h3>
             <hr class="custom-line"></hr>
             <div className="skills-container">
                 <div className="skill-category">
-                    <h4>Programming Languages</h4>
+                    <h4 className="skill-name">Programming Languages</h4>
                     <div className="logo-caption-container">
                         <div className="logo-caption-combo">
                             <img src={cpp} className="skills-logo" alt="C++" />
@@ -39,7 +39,7 @@ function Skills() {
                     </div>
                 </div>
                 <div className="skill-category">
-                    <h4>Web Development</h4>
+                    <h4 className="skill-name">Web Development</h4>
                     <div className="logo-caption-container">
                         <div className="logo-caption-combo">
                             <img src={mongo} className="skills-logo" />
@@ -61,7 +61,7 @@ function Skills() {
                 </div>
 
                 <div className="skill-category">
-                    <h4>Data Science Libraries</h4>
+                    <h4 className="skill-name">Data Science Libraries</h4>
                     <div className="logo-caption-container">
                         <div className="logo-caption-combo">
                             <img src={tensorFlow} className="skills-logo" />

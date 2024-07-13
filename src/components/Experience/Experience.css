@@ -7,30 +7,41 @@
     margin-bottom: 0px;
 } */
 
-.experienceText p {
-    margin-top: 0px; 
-}
 
 .timeText {
     opacity: 0.5;
     display: block;
+    font-size: 20px;
     /* margin-bottom: 0px; */
+}
+
+.companyText {
+    font-size: 23px;
 }
 
 .positionText {
     opacity: 0.75;
+    margin-top: 0px; 
+    font-size: 22px;
 }
 
-.container {
+.experience-container {
     /* width: 70%; */
     margin: 0 auto; 
     padding: 15px;
     width: 1000px;
 }
 
+@media (max-width: 1070px) {
+    .experience-container {
+        width: 500px;
+    }
+}
+
 .titles {
     text-align: left;
     margin-bottom: 5px;
+    font-size: 28px;
 }
 
 /* .custom-line {

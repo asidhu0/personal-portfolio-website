@@ -88,14 +88,14 @@ function Projects() {
         `
 
     const projects = [
-        { id: 1, name: 'Grata Manager', description: grataDescription, image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
-        { id: 2, name: 'Lab Scheduler', description: labSchedulerDescription, image: server, logos: [python, pandas], details: labSchedulerDetails},
-        { id: 3, name: 'Dining Hall Menu App', description: dcDescription, image: dcAppPicture, logos: [mongo, express, react, node], details: dcDetails},
-        { id: 4, name: 'Security Camera', description: securityCameraDescription, image: securityCamera, logos: [python, tensorFlow, numpy], details: cameraDetails},
-        { id: 5, name: 'User Thread Library', description: userThreadLibraryDescription, image: threading, logos: [c], details: threadDetails},
-        { id: 6, name: 'Simple Shell', description: terminalDescription, image: terminalDemo, logos: [c], details: shellDetails},
-        { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, image: tuneHunt, logos: [react], details: tuneHuntDetails},
-        { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
+        { id: 1, name: 'Grata Manager', description: grataDescription, image: grata1, logos: [{ image: swiftUILogo, caption: 'SwiftUI' }, { image: cocoaPods, caption: 'CocoaPods' }], details: grataDetails},
+        { id: 2, name: 'Lab Scheduler', description: labSchedulerDescription, image: server, logos: [{ image: python, caption: 'Python' }, { image: pandas, caption: 'Pandas' }], details: labSchedulerDetails},
+        { id: 3, name: 'Dining Hall Menu App', description: dcDescription, image: dcAppPicture, logos: [{ image: mongo, caption: 'MongoDB' }, { image: express, caption: 'Express' }, { image: react, caption: 'React' }, { image: node, caption: 'Node.js' }], details: dcDetails},
+        { id: 4, name: 'Security Camera', description: securityCameraDescription, image: securityCamera, logos: [{ image: python, caption: 'Python' }, { image: tensorFlow, caption: 'TensorFlow' }, { image: numpy, caption: 'NumPy' }], details: cameraDetails},
+        { id: 5, name: 'User Thread Library', description: userThreadLibraryDescription, image: threading, logos: [{ image: c, caption: 'C' }], details: threadDetails},
+        { id: 6, name: 'Simple Shell', description: terminalDescription, image: terminalDemo, logos: [{ image: c, caption: 'C' }], details: shellDetails},
+        { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, image: tuneHunt, logos: [{ image: react, caption: 'React' }], details: tuneHuntDetails},
+        { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, image: ticTacToe, logos: [{ image: swiftUILogo, caption: 'SwiftUI' }], details: ticTacToeDetails},
     ];
     const cells = [
         { id: 1, name: 'Grata Manager', description: grataDescription, image: grata1, logos: [swiftUILogo, cocoaPods], details: grataDetails},
@@ -109,7 +109,7 @@ function Projects() {
     ];
     // const cells = new Array(8).fill(null);
     return (
-        <div className="container">
+        <div className="projects-container">
             <div>
                 <h3 className="titles">Projects</h3>
                 <hr class="custom-line"></hr>

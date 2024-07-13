@@ -1,14 +1,29 @@
 .home {
     display: flex;
     align-items: center; 
-    /* width: 70%; */
     width: 1000px;
     margin: 0 auto; 
+}
+
+@media (max-width: 1070px) {
+    .home {
+        width: 920px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 .text-column {
     width: 50%; 
     padding-right: 2%;
+}
+
+.hello {
+    font-size: 48px;
+}
+
+.swe-text {
+    font-size: 24px;
 }
 
 .image-column {

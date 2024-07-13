@@ -5,7 +5,7 @@ function TextLine({ time, company, position }) {
     return (
         <div className="experienceText">
             <small className="timeText">{time}</small>
-            <strong> {company}</strong>
+            <strong className="companyText"> {company}</strong>
             <p className="positionText"> {position} </p>
         </div>
     )
@@ -13,7 +13,7 @@ function TextLine({ time, company, position }) {
 
 function Experience() { 
     return (
-        <div className="container">
+        <div className="experience-container">
             <h3 className="titles">Experience</h3>
             {/* <hr class="custom-line"></hr> */}
             <hr></hr>
