@@ -24,38 +24,38 @@ import securityCamera from './../../assets/securityCameraReal.png'
 import './Projects.css';
 
 function Projects() { 
-    const dcDescription = 'Developed the UC Davis Dining Hall App using MERN stack while mentoring a cross-functional team of developers and designers. The app displays menus, allows dietary based filtering, tracks calories, and saved favorite food items.'
-    const grataDescription = 'Built iOS native application with five other developers. The app allows building managers easily pair bluetooth locks to tenant units, lock and unlock units, change lock PINs, unpair locks, and other minor acconut management features.'
-    const labSchedulerDescription = 'Implemented software to display live server data and availability status using host/client scripts implemented with TCP sockets. Allows engineers to monitor server availablity status so they can reserve it accordingly on Microsoft Teams.'
+    const dcDescription = 'Developed the UC Davis Dining Hall App using the MERN stack while mentoring a cross-functional team of developers and designers. The app displays menus, allows dietary-based filtering, tracks calories, and saves favorite food items.'
+    const grataDescription = 'Built an iOS native application with five other developers. The app allows building managers to easily pair Bluetooth locks to tenant units, lock and unlock units, change lock PINs, unpair locks, and perform other minor account management features.'
+    const labSchedulerDescription = 'Implemented software to display live server data and availability status using host/client scripts with TCP sockets. This allows engineers to monitor server availability status so they can reserve it accordingly on Microsoft Teams.'
     const userThreadLibraryDescription = 'Developed a Linux-based user-level thread library, offering an interface for simulating multi-threading and concurrency. Implemented user-thread, semaphore, and preemption API\'s for thread management and proper thread synchronization.'
-    const tuneHuntDescription = 'Implemented an interactive map-based game built with React Native. You can collect album covers around your location, add them to your library, and have the Spotfiy page linked so you can discover new music!'
-    const ticTacToeDescription = 'Designed and implemented a native iOS Tic-Tac-Toe Application using SwiftUI. The game consists of one/two player mode, 4 levels of difficulty ranging from easy to impossible, customizable names, score tracker, and game sounds.'
-    const terminalDescription = 'Developed a custom shell that handles basic in-built commands, supports multipiping and output redirection, and manages simple environmental variables, ensuring efficient parsing of commands with error handling and memory management.'
+    const tuneHuntDescription = 'Implemented an interactive map-based game built with React Native. Users can collect album covers around their location, add them to their library, and have the Spotify page linked to discover new music!'
+    const ticTacToeDescription = 'Designed and implemented a native iOS Tic-Tac-Toe Application using SwiftUI. The game consists of one/two-player modes, 4 levels of difficulty ranging from easy to impossible, customizable names, score tracker, and game sounds.'
+    const terminalDescription = 'Developed a custom shell that handles basic built-in commands, supports multi-piping and output redirection, and manages simple environmental variables, ensuring efficient parsing of commands with error handling and memory management.'
     const securityCameraDescription = 'Leveraged machine learning and image processing to detect and track people in live camera feed. Utilizing TensorFlow\'s convolutional neural networks, the system provides accurate, hardware-independent security monitoring with live alerts.'
 
     const dcDetails = `
-        - Mentored developers, designers, and project manager by providing technical guidance and fostering interpersonal skill development
-        - Developed the UC Davis dining commons app with daily macro tracking, filtering food options, and notifications for favorite foods
-        - Oversaw designed process which involved market and user research, competitive analysis, user flow creation, wireframing from low to high fidelity, and finally establishing a comprehensive design system.
-        - Implemented Google Authentication and notifications using Firebase and web scraped food items using Python
+        - Mentored developers, designers, and the project manager by providing technical guidance and fostering interpersonal skill development
+        - Developed the UC Davis Dining Commons App with daily macro tracking, food option filtering, and notifications for favorite foods
+        - Oversaw the design processm which involved market and user research, competitive analysis, user flow creation, wireframing from low to high fidelity, and finally establishing a comprehensive design system.
+        - Implemented Google Authentication and notifications using Firebase, and web scraped food items using Python
         `
     const grataDetails = `
         - Utilized the Alfred iOS SDK to enable direct pairing and control of locks via Bluetooth
         - Built a Network class to handle all API communications with Grata\'s server via HTTP requests, including authentication and operational commands
-        - Integrated Local Authentication framework to support FaceID, requiring initial username and password login followed by biometric authentication for ease of use
-        - Used CocoaPods for managing external libraries and frameworks, ensuring stable project dependencies through a podfile configuration
+        - Integrated the Local Authentication framework to support Face ID, requiring an initial username and password login followed by biometric authentication for ease of use
+        - Used CocoaPods for managing external libraries and frameworks, ensuring stable project dependencies through a Podfile configuration.
         - The application is now officially published and available for download on the App Store: https://apps.apple.com/ca/app/grata-manager/id6447966708
         `
     const labSchedulerDetails = `
-        - Client script on host machine communicates sequentially with multiple server scripts requesting system information
-        - Utilized pandas to store data received by client script (server data) in an Excel sheet to allow easy accessibility for Wiki page parsing
-        - Comapny's internal Wiki page extracts data from the Excel sheet enabling engineers to monitor server availability and characteristics
-        - Configured cron job with python virtual environment to run client script every minute so server availability data remains updated
-        - Engineers can reserve the server for long usages by creating an event on Microsoft Teams and the Wiki page will show server is occupied
-        - Resulted in streamlined server resource allocation and product is implemented company-wide
+        - Client script on the host machine communicates sequentially with multiple server scripts requesting system information
+        - Utilized pandas to store data received by the client script (server data) in an Excel sheet to allow easy accessibility for Wiki page parsing
+        - Solidigm's internal Wiki page extracts data from the Excel sheet enabling engineers to monitor server availability and characteristics
+        - Configured a cron job with a Python virtual environment to run the client script every minute, ensuring server availability data remains updated
+        - Engineers can reserve the server for long usage by creating an event on Microsoft Teams, and the Wiki page will show the server is occupied
+        - Resulted in streamlined server resource allocation, and the product is implemented company-wide
         `
     const threadDetails = `
-        - Provides interface for creating, running, and managing threads concurrently on Linux.
+        - Provides an interface for creating, running, and managing threads concurrently on Linux
         - Utilized a doubly-linked list for efficient queue management, aiding in operations like enqueue, dequeue, and node deletion
         - Managed threads across various states (ready, blocked, zombie) with specific queues for each, excluding the singular running thread
         - Implemented semaphores for thread synchronization, managing thread blocking and unblocking based on resource availability
@@ -64,21 +64,21 @@ function Projects() {
         `
     const tuneHuntDetails = `
         - Developed a mobile application that allows users to discover and collect music album covers based on their geographical location
-        - Integrated Spotify API to randomly fetch and display music album covers on a map based on the user's location
-        - Users can select albums cover if there are in close proximity and add it to their personal library within the app
+        - Integrated the Spotify API to randomly fetch and display music album covers on a map based on the user's location
+        - Users can select album covers if they are in close proximity and add them to their personal library within the app
         - Provided each album's Spotify link so users can have instant access to listen to the respective album
         `
     const ticTacToeDetails = `
-        - Utilized XCode and Swift to create a user-friendly and interactive iOS Tic Tac Toe appliation
+        - Utilized Xcode and Swift to create a user-friendly and interactive iOS Tic Tac Toe application
         - Refactored the app architecture to Model-View-ViewModel (MVVM) to enhance code separation and improve manageability
-        - Added animations for X and O pieces and alerts for wins, loses, and draws to enrich the user experience
+        - Added animations for X and O pieces and alerts for wins, losses, and draws to enrich the user experience
         `
     const shellDetails = `
         - All user input is parsed into a linked list to efficiently manage commands, arguments, and symbols like pipes and redirection
-        - The system call, fork(), us used to create a new child process which uses the input data to run the command using execvp()
-        - sshell supports output redirection and piping, including complex scenarios with multiple pipes by properly managing file descriptors
-        - Environment variables can be set and used and robust error management ensures incorrect command usage does not happen
-        - There are three built in commands (pwd, cd, exit) that execute without forking new processes using functions such as chdir() and getcwd()
+        - The system call fork() is used to create a new child process which uses the input data to run the command using execvp()
+        - The shell supports output redirection and piping, including complex scenarios with multiple pipes by properly managing file descriptors
+        - Environment variables can be set and used, and robust error management ensures incorrect command usage does not occur
+        - There are three built-in commands (pwd, cd, exit) that execute without forking new processes, using functions such as chdir() and getcwd()
         `
     const cameraDetails = `
         - Processed live video frames to detect the presence of persons through a webcam using OpenCV, and resulted in an accuracy of 90%
