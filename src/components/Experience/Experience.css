@@ -2,17 +2,10 @@
     text-align: left;
 }
 
-/* .experienceText strong {
-    margin-top: 2px; 
-    margin-bottom: 0px;
-} */
-
-
 .timeText {
     opacity: 0.5;
     display: block;
-    font-size: 20px;
-    /* margin-bottom: 0px; */
+    font-size: 15px;
 }
 
 .companyText {
@@ -20,13 +13,12 @@
 }
 
 .positionText {
-    opacity: 0.75;
+    opacity: 0.6;
     margin-top: 0px; 
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .experience-container {
-    /* width: 70%; */
     margin: 0 auto; 
     padding: 15px;
     width: 1000px;
@@ -36,6 +28,10 @@
     .experience-container {
         width: 500px;
     }
+    .below-line {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
 }
 
 .titles {
@@ -44,12 +40,73 @@
     font-size: 28px;
 }
 
-/* .custom-line {
-    height: 1px;
-    background-color: #666;
-    border: none;
-} */
-
 .below-line {
     margin-top: 25px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.below-right {
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.below-line-wrapper {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.left-content {
+    font-size: 20px;
+    text-align: left;
+    width: 100%; 
+    box-sizing: border-box; 
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.right-content {
+    width: 100%;
+}
+
+.aboutMe {
+    text-align: left;
+    align-items: top;
+}
+
+.vertical-line {
+    position: relative; 
+    border-left: 1px solid white;
+    margin: 0 20px;
+    height: auto;
+    min-height: 250px;
+}
+
+.vertical-line::before,
+.vertical-line::after,
+.vertical-line .middle-dot {
+    content: '';
+    position: absolute;
+    left: -5.5px; 
+    width: 10px;
+    height: 10px;
+    background-color: white; 
+    border-radius: 50%;
+}
+
+.vertical-line::before {
+    top: 23px; 
+}
+
+.vertical-line .middle-dot {
+    top: 111px; 
+}
+
+.vertical-line::after {
+    top: 199px; 
 }

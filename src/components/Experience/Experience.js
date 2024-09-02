@@ -15,12 +15,23 @@ function Experience() {
     return (
         <div className="experience-container">
             <h3 className="titles">Experience</h3>
-            {/* <hr class="custom-line"></hr> */}
             <hr></hr>
             <div className="below-line">
-                <TextLine time="Jan 2024 - present" company="Forest Change Analysis Lab" position="Software Engineer" />
-                <TextLine time="Jun 2023 - Sep 2023" company="Lawrence Livermore National Laboratory" position="Software Engineer Intern" />
-                <TextLine time="Jan 2023 - Jun 2023" company="Solidigm" position="SSD Technical Intern" />
+                <div className="below-line-wrapper">
+                    <div>
+                        <p className="left-content">My interests lie across various domains including full stack development, containerization, building scalable workflows, machine learning, and computer vision. I enjoy leading teams, continuously learning, and delivering impactful solutions. </p>
+                    </div>
+                </div>
+                <div className = "below-right">
+                    <div className="vertical-line">
+                        <span className="middle-dot"></span> 
+                    </div>
+                    <div className="right-content">
+                        <TextLine time="Jan 2024 - present" company="Forest Change Analysis Lab" position="Software Engineer" />
+                        <TextLine time="Jun 2023 - Sep 2023" company="Lawrence Livermore National Laboratory" position="Software Engineer Intern" />
+                        <TextLine time="Jan 2023 - Jun 2023" company="Solidigm" position="SSD Technical Intern" />
+                    </div>
+                </div>
             </div>
         </div>
     );
