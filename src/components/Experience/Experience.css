@@ -84,12 +84,13 @@
     border-left: 1px solid white;
     margin: 0 20px;
     height: auto;
-    min-height: 250px;
+    min-height: 340px;
 }
 
 .vertical-line::before,
 .vertical-line::after,
-.vertical-line .middle-dot {
+.vertical-line .middle-dot,
+.vertical-line .bottom-dot {
     content: '';
     position: absolute;
     left: -5.5px; 
@@ -100,13 +101,17 @@
 }
 
 .vertical-line::before {
-    top: 23px; 
+    top: 23px;
 }
 
 .vertical-line .middle-dot {
-    top: 111px; 
+    top: 111px;
 }
 
 .vertical-line::after {
-    top: 199px; 
+    top: 199px;
+}
+
+.vertical-line .bottom-dot {
+    top: 287px;
 }

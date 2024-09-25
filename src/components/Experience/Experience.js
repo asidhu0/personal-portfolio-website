@@ -25,9 +25,11 @@ function Experience() {
                 <div className = "below-right">
                     <div className="vertical-line">
                         <span className="middle-dot"></span> 
+                        <span className="bottom-dot"></span>
                     </div>
                     <div className="right-content">
-                        <TextLine time="Jan 2024 - present" company="Forest Change Analysis Lab" position="Software Engineer" />
+                        <TextLine time="Oct 2024 - present" company="Meta" position="Production Engineer" />
+                        <TextLine time="Jan 2024 - Sep 2024" company="Forest Change Analysis Lab" position="Junior Software Engineer" />
                         <TextLine time="Jun 2023 - Sep 2023" company="Lawrence Livermore National Laboratory" position="Software Engineer Intern" />
                         <TextLine time="Jan 2023 - Jun 2023" company="Solidigm" position="SSD Technical Intern" />
                     </div>
