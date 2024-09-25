@@ -8,7 +8,6 @@ import express from './../../assets/ex.png'
 import react from './../../assets/reactNew.png'
 import node from './../../assets/node-js-seeklogo.svg'
 import cocoaPods from './../../assets/cocoapods.svg'
-// import ticTacToe from './../../assets/ticTacToe.png'
 import ticTacToe from './../../assets/new.png'
 import python from './../../assets/python.png'
 import c from './../../assets/c.png'
@@ -18,7 +17,6 @@ import terminalDemo from './../../assets/terminalDemo.gif'
 import threading from './../../assets/multithreadingFinal.png'
 import server from './../../assets/server.png'
 import pandas from './../../assets/Pandas.svg'
-// import tuneHunt from './../../assets/tuneHunt.png'
 import tuneHunt from './../../assets/csu.png'
 import securityCamera from './../../assets/securityCameraReal.png'
 import './Projects.css';
@@ -107,7 +105,6 @@ function Projects() {
         { id: 7, name: 'Tune Hunt', description: tuneHuntDescription, image: tuneHunt, logos: [react], details: tuneHuntDetails},
         { id: 8, name: 'Tic Tac Toe', description: ticTacToeDescription, image: ticTacToe, logos: [swiftUILogo], details: ticTacToeDetails},
     ];
-    // const cells = new Array(8).fill(null);
     return (
         <div className="projects-container">
             <div>
@@ -115,14 +112,6 @@ function Projects() {
                 <hr class="custom-line"></hr>
             </div>
             <div className="grid">
-            {/* {cells.map((cell, index) => (
-                <div key={index} className="cell">
-                    <img src={cell.imageUrl} alt={cell.title} className="cell-image" />
-                    <h3>{cell.name}</h3>
-                    <p>{cell.description}</p>
-                </div>
-            ))} */}
-
                 {projects.map(project => (
                     <Rectangle
                         key={project.id}
@@ -130,8 +119,6 @@ function Projects() {
                         description={project.description}
                         image={project.image}
                         logos={project.logos}
-                        // imageClassName={project.id === 5 ? 'special-image-style' : 'image'}
-                        // imageClassName={'image'}
                         details={project.details}
                     />
                 ))}
