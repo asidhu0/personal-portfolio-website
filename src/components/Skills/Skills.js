@@ -1,14 +1,14 @@
 import swiftUILogo from './../../assets/swift.png'
 import mongo from './../../assets/mongodb-seeklogo2.svg'
 import express from './../../assets/ex.png'
-import react from './../../assets/reactNew.png'
+import react from './../../assets/react.jpg'
 import node from './../../assets/node-js-seeklogo.svg'
 import python from './../../assets/python.png'
-import tensorFlow from './../../assets/Tensorflow.svg.png'
-import numpy from './../../assets/numpy.png'
+import tensorFlow from './../../assets/Tensorflow.png'
+import numpy from './../../assets/numpy.svg'
 import pandas from './../../assets/Pandas.svg'
 import cpp from './../../assets/cpp.png'
-import bash from './../../assets/bash.svg.png'
+import bash from './../../assets/bash.png'
 import './Skills.css';
 
 function Skills() {
