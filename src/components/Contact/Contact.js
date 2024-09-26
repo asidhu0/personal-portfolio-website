@@ -12,7 +12,7 @@ function Contact() {
                 <hr class="custom-line"></hr>
             </div>
             <div className="contact-content">
-                <p className="contact-text">Are you interested in collaborating or want to connect or chat? Feel free to reach out!</p>
+                <p className="contact-text">Interseted in chatting? Feel free to reach out!</p>
                 <div className="contact-icons">
                     <div className="contact-button-text">
                         <a href="mailto:asidhu359@gmail.com" className="contact-button-text">
